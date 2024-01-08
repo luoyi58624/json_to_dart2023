@@ -240,9 +240,9 @@ $(document).ready(function () {
             if (typeof inner === "string") toType = "v.toString()";
             if (typeof inner === "number") {
               if (Number.isInteger(inner)) {
-                toType = isShouldEnhanceFaultTolerance ? "int.tryParse(v.toString() ?? '')" : "v.toInt()";
+                toType = isShouldEnhanceFaultTolerance ? "num.tryParse(v.toString() ?? '')" : "v.toInt()";
               } else {
-                toType = isShouldEnhanceFaultTolerance ? "double.tryParse(v.toString() ?? '')" : "v.toDouble()";
+                toType = isShouldEnhanceFaultTolerance ? "num.tryParse(v.toString() ?? '')" : "v.toDouble()";
               }
             }
           }
@@ -418,10 +418,10 @@ $(document).ready(function () {
                   type = "String";
                 } else if (typeof element === "number") {
                   if (Number.isInteger(element)) {
-                    toType = isShouldEnhanceFaultTolerance ? `int.tryParse(json[${jsonKey}] ?? '')` : isWithDefaultValue ? `json[${jsonKey}] ?? 0` : `json[${jsonKey}]`;
+                    toType = isShouldEnhanceFaultTolerance ? `num.tryParse(json[${jsonKey}].toString ?? '')` : isWithDefaultValue ? `json[${jsonKey}] ?? 0` : `json[${jsonKey}]`;
                     type = isUseNum ? "num" : "int";
                   } else {
-                    toType = isShouldEnhanceFaultTolerance ? `double.tryParse(json[${jsonKey}]?.toString() ?? '')` : isWithDefaultValue ? `json[${jsonKey}] ?? 0.0` : `json[${jsonKey}]`;
+                    toType = isShouldEnhanceFaultTolerance ? `num.tryParse(json[${jsonKey}]?.toString() ?? '')` : isWithDefaultValue ? `json[${jsonKey}] ?? 0.0` : `json[${jsonKey}]`;
                     type = isUseNum ? "num" : "double";
                   }
                 }
@@ -585,6 +585,7 @@ $(document).ready(function () {
       let defaultValue = checked ? "1" : "0";
       let selector = "#" + checkBoxID;
       let strFromCookie = $.cookie(checkBoxID);
+      console.log(strFromCookie,checkBoxID);
       if (strFromCookie === undefined || strFromCookie.length === 0) {
         $.cookie(checkBoxID, defaultValue);
       }
@@ -600,7 +601,7 @@ $(document).ready(function () {
     /// * checkbox default value
     textFieldBinding("classNameTextField", "MyModel");
     checkBoxBinding("nullSafeCheckBox", true);
-    checkBoxBinding("isFaultToleranceCheckBox", false);
+    checkBoxBinding("isFaultToleranceCheckBox", true);
     checkBoxBinding("isUseNumCheckbox", true);
     checkBoxBinding("isForceToStringCheckbox", false);
     checkBoxBinding("isRemoveFromJsonCheckBox", false);
