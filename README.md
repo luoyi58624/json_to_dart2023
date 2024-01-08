@@ -2,8 +2,8 @@
 
 online tool for convert json to dart code
 
-### [online demo](https://2lineofcode.github.io/json_to_dart2023)
-<a href="https://2lineofcode.github.io/json_to_dart2023" rel="some text">![Foo](img/image.png)</a>
+### [online demo](https://luoyi58624.github.io/json_to_dart2023/)
+<a href="https://luoyi58624.github.io/json_to_dart2023" rel="some text">![Foo](img/image.png)</a>
 
 
 ## Feature
@@ -24,7 +24,7 @@ online tool for convert json to dart code
 - when select `Force String Type` , the `bool` type will not convert
 
 ## Explore Complex Json Sample
-click here for more case: [sample](https://github.com/aditgpt/json_to_dart2023/tree/gh-pages/sample)
+click here for more case: [sample](https://github.com/luoyi58624/json_to_dart2023/tree/gh-pages/sample)
 ```json
 {
     "string_field":"json complex case",
