@@ -545,7 +545,7 @@ $(document).ready(function () {
           ? rootClass
               .replace(/([A-Z])/g, "_$1")
               .toLowerCase()
-              .substr(1) + "_entity.dart"
+              .substr(1) + ".dart"
           : ""
       );
       
@@ -553,7 +553,7 @@ $(document).ready(function () {
         rootClass
           .replace(/([A-Z])/g, "_$1")
           .toLowerCase()
-          .substr(1) + "_entity.dart";
+          .substr(1) + ".dart";
     }
 
     function textFieldBinding(tfID, defaultValue) {
