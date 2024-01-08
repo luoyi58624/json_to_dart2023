@@ -379,12 +379,12 @@ $(document).ready(function () {
                   genericString = genericString.replaceAll(">", ">") + nullSafeSymbol;
                 }
 
-                propsLines.push(`  ${element[0] != null ? genericString : `List<dynamic>${nullSafeSymbol}`} ${legalKey};\n`);
+                propsLines.push(`  ${element[0] != null ? genericString : `List${nullSafeSymbol}`} ${legalKey};\n`);
 
                 /// * part push fromJson, toJson, copyWith (array)
                 fromJsonLines.push(fromJsonLinesJoined);
                 toJsonLines.push(toJsonLinesJoined);
-                copyWithLines.push(`    ${element[0] != null ? genericString : `List<dynamic>${nullSafeSymbol}`} ${legalKey},\n`);
+                copyWithLines.push(`    ${element[0] != null ? genericString : `List${nullSafeSymbol}`} ${legalKey},\n`);
 
                 if (typeof inner === "object") {
                   lines.unshift(objToDart(element, className, key));
