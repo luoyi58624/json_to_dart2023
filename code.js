@@ -536,7 +536,7 @@ $(document).ready(function () {
       if (isShowJSONSource) {
         prefixDartCode += `/// * \n`
         prefixDartCode += `/// * JSON Source: ${JSON.stringify(jsonObj)}\n`
-        prefixDartCode += `/// * Code generated: https://2lineofcode.github.io/json_to_dart2023\n`
+        prefixDartCode += `/// * Code generated: https://luoyi58624.github.io/json_to_dart2023\n`
         prefixDartCode += `/// * \n`
       }
 
