@@ -339,9 +339,9 @@ $(document).ready(function () {
         lines.push(`class ${className} {`);
 
         constructorLines.push(`  ${className}({`);
-        fromJsonLines.push(`  ${className}.fromJson(Map<String, dynamic> json) {\n`);
-        toJsonLines.push(`  Map<String, dynamic> toJson() {\n`);
-        toJsonLines.push(`    final data = <String, dynamic>{};\n`);
+        fromJsonLines.push(`  ${className}.fromJson(Map json) {\n`);
+        toJsonLines.push(`  Map toJson() {\n`);
+        toJsonLines.push(`    final data = {};\n`);
         copyWithLines.push(`\n  ${className} copyWith({\n`);
 
         /// * loop start begin
@@ -445,7 +445,7 @@ $(document).ready(function () {
         constructorLines.push(`});\n`);
         fromJsonLines.push(`  }\n`);
         toJsonLines.push(`    return data;\n  }`);
-        fromListLines.push(`\n  static List<${className}> fromList(List<Map<String, dynamic>> list) {\n${tab(1)}return list.map((map) => ${className}.fromJson(map)).toList();\n  }`);
+        fromListLines.push(`\n  static List<${className}> fromList(List<Map> list) {\n${tab(1)}return list.map((map) => ${className}.fromJson(map)).toList();\n  }`);
         copyWithLines.push(`  }) => ${className}(\n`);
         for (let key in jsonObj) {
           let legalKey = dartKeywordDefence(key);
