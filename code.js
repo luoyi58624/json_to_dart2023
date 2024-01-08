@@ -607,7 +607,7 @@ $(document).ready(function () {
     }
 
     /// * checkbox default value
-    textFieldBinding('classNameTextField', 'MyModel')
+    textFieldBinding('classNameTextField', '')
     checkBoxBinding('nullSafeCheckBox', true)
     checkBoxBinding('isFaultToleranceCheckBox', true)
     checkBoxBinding('isUseNumCheckbox', true)
