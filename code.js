@@ -418,7 +418,7 @@ $(document).ready(function () {
                   type = "String";
                 } else if (typeof element === "number") {
                   if (Number.isInteger(element)) {
-                    toType = isShouldEnhanceFaultTolerance ? `num.tryParse(json[${jsonKey}].toString ?? '')` : isWithDefaultValue ? `json[${jsonKey}] ?? 0` : `json[${jsonKey}]`;
+                    toType = isShouldEnhanceFaultTolerance ? `num.tryParse(json[${jsonKey}]?.toString() ?? '')` : isWithDefaultValue ? `json[${jsonKey}] ?? 0` : `json[${jsonKey}]`;
                     type = isUseNum ? "num" : "int";
                   } else {
                     toType = isShouldEnhanceFaultTolerance ? `num.tryParse(json[${jsonKey}]?.toString() ?? '')` : isWithDefaultValue ? `json[${jsonKey}] ?? 0.0` : `json[${jsonKey}]`;
